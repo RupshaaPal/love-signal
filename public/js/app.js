@@ -1067,6 +1067,27 @@ function initSocketListeners() {
 // INITIALIZATION ON CONTENT LOADED
 // ==========================================================================
 window.addEventListener('DOMContentLoaded', () => {
+  const nameModal = document.getElementById('name-modal');
+const saveNameBtn = document.getElementById('save-name-btn');
+
+saveNameBtn.addEventListener('click', () => {
+  const userName = document
+    .getElementById('partner-name-input')
+    .value
+    .trim();
+
+  if(userName.length < 1) return;
+
+  localStorage.setItem('loveSignalName', userName);
+
+  nameModal.style.display = 'none';
+
+  document.getElementById('hud-prompt-msg').innerText =
+    `Welcome ${userName} ❤️`;
+});
+  if(localStorage.getItem('loveSignalName')){
+  nameModal.style.display = 'none';
+}
   // Bind all interactive actions
   initLobbyUI();
   initEmitterUI();
