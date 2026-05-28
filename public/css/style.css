@@ -1095,3 +1095,61 @@ body::before{
     transform:translateY(50%);
   }
 }
+/* ============================= */
+/* CHERRY BLOSSOM PETALS */
+/* ============================= */
+
+.sakura-container{
+  position:fixed;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+  z-index:0;
+}
+
+.sakura{
+  position:absolute;
+  top:-10%;
+  font-size:24px;
+  opacity:0.8;
+  animation-name:fall;
+  animation-timing-function:linear;
+  animation-iteration-count:infinite;
+}
+
+@keyframes fall{
+  0%{
+    transform:
+      translateX(0)
+      translateY(-10vh)
+      rotate(0deg);
+  }
+
+  25%{
+    transform:
+      translateX(40px)
+      translateY(25vh)
+      rotate(90deg);
+  }
+
+  50%{
+    transform:
+      translateX(-30px)
+      translateY(50vh)
+      rotate(180deg);
+  }
+
+  75%{
+    transform:
+      translateX(50px)
+      translateY(75vh)
+      rotate(270deg);
+  }
+
+  100%{
+    transform:
+      translateX(-20px)
+      translateY(120vh)
+      rotate(360deg);
+  }
+}
