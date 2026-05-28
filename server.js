@@ -157,6 +157,7 @@ io.on('connection', (socket) => {
       type: data.type,
       intensity: data.intensity || 1,
       combo: data.combo || 1,
+      textNote: data.textNote ||"",
       senderId: socket.id
     });
   });
