@@ -1000,6 +1000,7 @@ function initSocketListeners() {
   socket.on('pairing-success', (data) => {
     isPartnerConnected = true;
     currentRoomId = data.roomId;
+    showNamePopup();
     
     document.getElementById('hud-status-text').innerText = "Sync Active";
     document.querySelector('.hud-status').style.color = 'var(--success-green)';
@@ -1067,8 +1068,16 @@ function initSocketListeners() {
 // INITIALIZATION ON CONTENT LOADED
 // ==========================================================================
 window.addEventListener('DOMContentLoaded', () => {
-  const nameModal = document.getElementById('name-modal');
+ const nameModal = document.getElementById('name-modal');
 const saveNameBtn = document.getElementById('save-name-btn');
+
+function showNamePopup() {
+  nameModal.style.display = 'flex';
+}
+
+function hideNamePopup() {
+  nameModal.style.display = 'none';
+}
 
 saveNameBtn.addEventListener('click', () => {
   const userName = document
@@ -1080,14 +1089,11 @@ saveNameBtn.addEventListener('click', () => {
 
   localStorage.setItem('loveSignalName', userName);
 
-  nameModal.style.display = 'none';
+  hideNamePopup();
 
   document.getElementById('hud-prompt-msg').innerText =
     `Welcome ${userName} ❤️`;
 });
-  if(localStorage.getItem('loveSignalName')){
-  nameModal.style.display = 'none';
-}
   // Bind all interactive actions
   initLobbyUI();
   initEmitterUI();
