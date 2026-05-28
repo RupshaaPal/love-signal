@@ -43,7 +43,7 @@ function getLocalIpAddress() {
 }
 
 const LOCAL_IP = getLocalIpAddress();
-const BASE_URL = `http://${LOCAL_IP}:${PORT}`;
+const BASE_URL = "https://love-signal.vercel.app";;
 
 console.log('--------------------------------------------------');
 console.log(`HeartSync Server Initializing...`);
