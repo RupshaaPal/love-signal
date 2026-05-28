@@ -5,7 +5,7 @@
  */
 
 // Initialize Socket.io
-const socket = io();
+const socket = io("https://love-signal.onrender.com");
 
 // State Variables
 let currentRoomId = null;
