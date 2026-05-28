@@ -751,10 +751,9 @@ const NoteSystem = {
       
       // Dispatch envelope to partner
       socket.emit('send-heart', {
-        type: 'envelope',
-        textNote: msg
-      });
-
+  type: 'envelope',
+  textNote: String(msg)
+});
       // Clear & Close
       composerModal.classList.remove('open');
       inputArea.value = '';
