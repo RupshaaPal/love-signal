@@ -1,0 +1,17 @@
+{
+  "name": "heart-sender",
+  "version": "1.0.0",
+  "description": "Real-time heart emoji sender to connect phones and screens with physics and audio synthesis",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "qrcode": "^1.5.3",
+    "socket.io": "^4.7.5"
+  },
+  "author": "Antigravity",
+  "license": "MIT"
+}
