@@ -17,14 +17,11 @@
   <script src="/socket.io/socket.io.js"></script>
 </head>
 <body>
-
   <!-- Background Ambient Glows -->
   <div class="ambient-glow bg-pink"></div>
   <div class="ambient-glow bg-purple"></div>
-
   <!-- Global Application Container -->
   <main id="app-container">
-
     <!-- HEADER / APP LOGO (Visible in Lobby) -->
     <header id="app-header">
       <div class="logo-wrap">
@@ -40,8 +37,8 @@
         <h1 class="logo-text">Heart<span>Sync</span></h1>
       </div>
       <p class="tagline">Connect screens and touch beats in real-time</p>
+      <p class="sweet-message"><strong><em>SeND ME HeARt iNStaNtLY Whenever YOU miSS ME</em></strong></p>
     </header>
-
     <!-- ==================== LOBBY SCREEN ==================== -->
     <section id="lobby-screen" class="view-panel active">
       
@@ -54,16 +51,13 @@
           <h2>Create Sync Room</h2>
           <p>Get a pairing room code & scan-and-sync QR code to connect another phone.</p>
         </button>
-
         <!-- CARD B: JOIN ROOM -->
         <button id="btn-join-mode" class="lobby-card glow-hover">
           <div class="card-icon">⚡</div>
           <h2>Join Existing Room</h2>
           <p>Enter a 4-digit code provided by your partner to connect instantly.</p>
         </button>
-
       </div>
-
       <!-- PAIRING DRAWER: WAITING TO BE SYNCED (Slides up when Create clicked) -->
       <div id="drawer-create" class="drawer-panel">
         <button class="btn-close-drawer" aria-label="Go back">&times;</button>
@@ -75,7 +69,6 @@
           <span class="room-code-label">Room Code</span>
           <span id="display-room-code" class="room-code-text">----</span>
         </div>
-
         <!-- Generated QR Code Image -->
         <div class="qr-container">
           <img id="pairing-qr-img" src="" alt="Pairing QR Code">
@@ -84,19 +77,16 @@
             <span>Generating sync code...</span>
           </div>
         </div>
-
         <div class="waiting-indicator">
           <div class="pulse-ring"></div>
           <p>Waiting for partner to connect...</p>
         </div>
       </div>
-
       <!-- PAIRING DRAWER: INPUT CODE (Slides up when Join clicked) -->
       <div id="drawer-join" class="drawer-panel">
         <button class="btn-close-drawer" aria-label="Go back">&times;</button>
         <h3>Enter Sync Code</h3>
         <p class="drawer-instruction">Type the 4-digit code shown on the other device:</p>
-
         <!-- Virtual Digit Slots -->
         <div class="pin-entry-container">
           <div class="pin-digit" id="digit-1">-</div>
@@ -106,7 +96,6 @@
         </div>
         
         <div id="join-error-msg" class="error-text"></div>
-
         <!-- Touch-Optimized Numeric Pad -->
         <div class="numpad">
           <button class="num-btn" data-val="1">1</button>
@@ -123,15 +112,12 @@
           <button class="num-btn btn-action" id="btn-numpad-back">⌫</button>
         </div>
       </div>
-
     </section>
-
     <!-- ==================== INTERACTIVE SYNC SCREEN ==================== -->
     <section id="sync-screen" class="view-panel">
       
       <!-- Fullscreen High-Performance Particle Canvas -->
       <canvas id="canvas-display"></canvas>
-
       <!-- Sync HUD (Overlays canvas) -->
       <div class="sync-hud">
         
@@ -148,7 +134,6 @@
             <span id="hud-status-text">Connected</span>
           </div>
         </div>
-
         <!-- Combo & Expressive Meter Overlay -->
         <div class="combo-meter-container">
           <div class="combo-bar-wrap">
@@ -160,18 +145,14 @@
           </div>
           <div id="combo-storm-text" class="combo-storm-alert">HEART STORM!</div>
         </div>
-
         <!-- Secret Envelope Message Overlay -->
         <button id="btn-secret-msg" class="msg-float-btn" title="Send secret love note">
           <span class="btn-icon">💌</span>
         </button>
-
         <!-- Dynamic UI Center Message (eg: "Hold the Heartbeat Pad with your partner!") -->
         <div id="hud-prompt-msg" class="hud-prompt">Taps send hearts. Sync hold below!</div>
-
         <!-- Bottom Controller Pad -->
         <div class="hud-controls">
-
           <!-- Heartbeat Sync Pad (Centerpiece) -->
           <div class="heartbeat-sync-pad-wrapper">
             <button id="btn-heartbeat-pad" class="heartbeat-pad glow-pulse">
@@ -182,7 +163,6 @@
             </button>
             <span class="pad-label">Heartbeat Sync (Hold)</span>
           </div>
-
           <!-- Expressive Heart Emitter Buttons -->
           <div class="heart-emitters">
             
@@ -190,33 +170,25 @@
               <span class="emitter-emoji">❤️</span>
               <span class="emitter-title">Classic</span>
             </button>
-
             <button class="emitter-btn panda" data-type="panda">
               <span class="emitter-emoji">🐼</span>
               <span class="emitter-title">Panda</span>
             </button>
-
             <button class="emitter-btn sparkle" data-type="sparkle">
               <span class="emitter-emoji">💖</span>
               <span class="emitter-title">Sparkle</span>
             </button>
-
             <button class="emitter-btn fire" data-type="fire">
               <span class="emitter-emoji">❤️‍🔥</span>
               <span class="emitter-title">Fire</span>
             </button>
-
             <button class="emitter-btn broken" data-type="broken">
               <span class="emitter-emoji">💔</span>
               <span class="emitter-title">Broken</span>
             </button>
-
           </div>
-
         </div>
-
       </div>
-
       <!-- Secret Note Composer Modal -->
       <div id="modal-secret-note" class="modal-overlay">
         <div class="modal-card glass-panel">
@@ -229,7 +201,6 @@
           </div>
         </div>
       </div>
-
       <!-- Pop-up Reader for Received Secret Note -->
       <div id="modal-read-note" class="modal-overlay">
         <div class="modal-card glass-panel letter-pop">
@@ -241,11 +212,8 @@
           <button id="btn-close-note" class="modal-btn primary">Aww! ❤️</button>
         </div>
       </div>
-
     </section>
-
   </main>
-
   <!-- Interactive Particles / Sound Setup Script -->
   <script src="js/app.js"></script>
 </body>
